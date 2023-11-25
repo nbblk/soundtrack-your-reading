@@ -1,17 +1,30 @@
-const events_db = [];
+const Events = require("../models/event.models");
 
-const getEvents = (ctx) => {
-  ctx.body = events_db;
-  ctx.status = 200;
+const getEvents = async (ctx) => {
+  try {
+    const results = await Events.find();
+    ctx.body = results;
+    ctx.status = 200;
+  } catch (err) {
+    console.log(err);
+    ctx.status = 500;
+    throw err;
+  }
 };
 
-const addEvent = (ctx) => {
-  events_db.push(ctx.request.body);
-  ctx.body = "Event Created!";
-  ctx.status = 201;
+const postEvent = async (ctx) => {
+  try {
+    await Events.create(ctx.request.body);
+    ctx.body = "Event Created!";
+    ctx.status = 201;
+  } catch (e) {
+    console.log(err);
+    ctx.status = 500;
+    throw err;
+  }
 };
 
 module.exports = {
   getEvents,
-  addEvent,
+  postEvent,
 };
