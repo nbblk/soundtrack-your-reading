@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="absolute bottom-0 w-full h-[150px] border border-black bg-black">
-      <h1 className="text-white">Footer</h1>
+    <footer className="bottom-0 w-full h-[150px] flex justify-center items-center border border-black bg-black">
+      <small className="text-xs text-white">Copyright 2023 Blake Sim</small>
     </footer>
   );
 }
