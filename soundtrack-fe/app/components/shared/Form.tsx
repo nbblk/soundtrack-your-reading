@@ -12,7 +12,7 @@ export default function Form({ size, children, onSubmit }: FormProps) {
 
   return (
     <form
-      className={`w-full ${sizeClass} border border-black`}
+      className={`w-full ${sizeClass} p-4 flex flex-col justify-center items-center gap-8 border border-black`}
       onSubmit={onSubmit}
     >
       {children}
