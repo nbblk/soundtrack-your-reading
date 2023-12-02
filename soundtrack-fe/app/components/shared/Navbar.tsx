@@ -19,9 +19,9 @@ export default function Navbar() {
             <Image
               src="/images/logo.jpg"
               alt="soundtrack-your-reading"
-              width="100"
-              height="100"
-              className="w-auto h-auto"
+              width="60"
+              height="0"
+              className="aspect-ratio w-auto h-max-[80px]"
               priority={true}
             />
           </Link>
