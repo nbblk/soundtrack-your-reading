@@ -21,7 +21,7 @@ export default function Navbar() {
               alt="soundtrack-your-reading"
               width="100"
               height="100"
-              className="max-w-[100px] max-h-[100px]"
+              className="w-auto h-auto"
               priority={true}
             />
           </Link>
