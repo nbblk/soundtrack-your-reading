@@ -11,9 +11,11 @@ export default function Card({ size, title, children }: CardProps) {
   const sizeClass = size === "sm" ? sm : size === "md" ? md : lg;
 
   return (
-    <div className={`w-full md:w-[200px] h-[150px] ${sizeClass} border border-black`}>
-      <h1>{title}</h1>
+    <li
+      className={`w-full md:w-[200px] h-[150px] p-4 ${sizeClass} flex flex-col justify-between items-start border border-black hover:cursor-pointer hover:shadow-[10px_10px_0px_1px_rgba(0,0,0,1)]`}
+    >
+      <h1 className="text-2xl">{title}</h1>
       {children}
-    </div>
+    </li>
   );
 }
