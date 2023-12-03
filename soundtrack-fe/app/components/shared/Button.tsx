@@ -2,10 +2,12 @@ interface ButtonProps {
   type: "button" | "submit";
   size: "sm" | "md" | "lg";
   value: string;
+  styles?: string;
+  children?: React.ReactNode;
   onClick: () => void;
 }
 
-export default function Button({ type, size, value, onClick }: ButtonProps) {
+export default function Button({ type, size, value, styles, onClick, children }: ButtonProps) {
   const sm = "md:w-1/5";
   const md = "md:w-1/2";
   const lg = "md:w-2/3";
@@ -14,10 +16,11 @@ export default function Button({ type, size, value, onClick }: ButtonProps) {
   return (
     <button
       type={type}
-      className={`w-full ${widthClass} h-auto p-1 border border-black hover:bg-black hover:text-white`}
+      className={`w-full ${widthClass} h-auto p-1 border border-black hover:bg-black hover:text-white ${styles}`}
       onClick={onClick}
     >
       {value}
+      {children}
     </button>
   );
 }
