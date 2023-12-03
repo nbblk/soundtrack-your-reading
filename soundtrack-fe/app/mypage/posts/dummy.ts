@@ -1,0 +1,136 @@
+import { Post } from "@/app/lib/types/Post";
+
+export const dummyPosts: Post[] = [
+  {
+    id: 1,
+    title: "Title1",
+    content: "Content1",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 1,
+      name: "User1",
+      email: "",
+    },
+  },
+  {
+    id: 2,
+    title: "Title2",
+    content: "Content2",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 2,
+      name: "User2",
+      email: "",
+    },
+  },
+  {
+    id: 3,
+    title: "Title3",
+    content: "Content3",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 3,
+      name: "User3",
+      email: "",
+    },
+  },
+  {
+    id: 4,
+    title: "Title4",
+    content: "Content4",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 4,
+      name: "User4",
+      email: "",
+    },
+  },
+  {
+    id: 5,
+    title: "Title5",
+    content: "Content5",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 5,
+      name: "User5",
+      email: "",
+    },
+  },
+  {
+    id: 6,
+    title: "Title6",
+    content: "Content6",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 6,
+      name: "User6",
+      email: "",
+    },
+  },
+  {
+    id: 7,
+    title: "Title7",
+    content: "Content7",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 7,
+      name: "User7",
+      email: "",
+    },
+  },
+  {
+    id: 8,
+    title: "Title8",
+    content: "Content8",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 8,
+      name: "User8",
+      email: "",
+    },
+  },
+  {
+    id: 9,
+    title: "Title7",
+    content: "Content7",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 9,
+      name: "User7",
+      email: "",
+    },
+  },
+  {
+    id: 10,
+    title: "Title7",
+    content: "Content7",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 10,
+      name: "User7",
+      email: "",
+    },
+  },
+  {
+    id: 11,
+    title: "Title7",
+    content: "Content7",
+    createdAt: "2021-08-20 12:00:00",
+    updatedAt: "2021-08-20 12:00:00",
+    user: {
+      id: 11,
+      name: "User7",
+      email: "",
+    },
+  },
+];
