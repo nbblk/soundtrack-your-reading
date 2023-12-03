@@ -13,30 +13,32 @@ export default function Write() {
   };
 
   return (
-    <section className="w-full h-screen p-8 flex justify-start items-start p-[40px]">
-      <div className="w-full flex flex-col justify-start items-start gap-16">
-        <div className="w-full flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Write something...</h1>
-          <Button
-            type="button"
-            size="md"
-            value="Publish"
-            onClick={onClickPublishButton}
-            styles="md:w-auto px-8"
-          />
+      <section className="w-full h-screen p-8 flex justify-start items-start p-[40px]">
+        <div className="w-full flex flex-col justify-start items-start gap-16">
+          <div className="w-full flex md:flex-row flex-col justify-between items-center gap-8">
+            <h1 className="text-2xl font-bold">Write something...</h1>
+            <Button
+              type="button"
+              size="md"
+              value="Publish"
+              onClick={onClickPublishButton}
+              styles="md:w-auto px-8"
+            />
+          </div>
+          <div className="w-full flex md:flex-row flex-col justify-between items-center gap-8">
+            <section className="w-full md:w-1/2 md:h-screen h-full">
+              <Editor
+                editorState={editorState}
+                toolbarClassName="toolbarClassName"
+                wrapperClassName="h-2/3 border border-black"
+                editorClassName="p-4"
+                onEditorStateChange={setEditorState}
+                placeholder="Jot down your thoughts here..."
+              />
+            </section>
+            <section className="w-full md:w-1/2 md:h-screen h-full"></section>
+          </div>
         </div>
-        <section className="w-1/2 h-screen">
-          <Editor
-            editorState={editorState}
-            toolbarClassName="toolbarClassName"
-            wrapperClassName="h-2/3 border border-black"
-            editorClassName="p-4"
-            onEditorStateChange={setEditorState}
-            placeholder="Jot down your thoughts here..."
-          />
-        </section>
-        <section></section>
-      </div>
-    </section>
+      </section>
   );
 }
