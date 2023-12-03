@@ -13,14 +13,14 @@ interface DropdownProps {
 
 export default function Dropdown({ items }: DropdownProps) {
   return (
-    <ul className="w-full h-auto flex flex-col justify-center items-center border border-black gap-4">
+    <ul className="absolute top-[30px] md:w-auto w-full h-auto z-10 flex flex-col justify-center items-center border border-black">
       {items?.map(({icon, title, link}: DropdownItem) => (
         <li
           key={title}
-          className="w-full p-1 flex justify-center items-center border border-black"
+          className="w-full p-1 flex justify-center items-center hover:bg-black hover:text-white"
         >
           {icon && <span>{icon}</span>}
-          <Link href={link} />{title}
+          <Link href={link}>{title}</Link>
         </li>
       ))}
     </ul>
