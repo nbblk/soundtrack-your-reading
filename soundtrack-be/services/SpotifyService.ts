@@ -1,11 +1,21 @@
-const axios = require("axios");
-const { generateRandomString } = require("../utils/generateRandomString");
+import "dotenv/config";
+import axios from "axios";
+import { generateRandomString } from "../utils/generateRandomString";
 
-class SpotifyService {
+interface ISpotifyService {
+  getAuthenticationUrl: () => string;
+  getAccessToken: (code: string) => Promise<string>;
+}
+
+export class SpotifyService implements ISpotifyService {
+  clientId: string;
+  clientSecret: string;
+  redirectUri: string;
+
   constructor() {
-    this.clientId = process.env.SPOTIFY_CLIENT_ID;
-    this.clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-    this.redirectUri = process.env.SPOTIFY_REDIRECT_URI;
+    this.clientId = process.env.SPOTIFY_CLIENT_ID || "";
+    this.clientSecret = process.env.SPOTIFY_CLIENT_SECRET || "";
+    this.redirectUri = process.env.SPOTIFY_REDIRECT_URI || "";
   }
 
   getAuthenticationUrl() {
@@ -13,7 +23,7 @@ class SpotifyService {
     const auth_query_parameters = new URLSearchParams({
       response_type: "code",
       client_id: this.clientId,
-      scope: scopes,
+      scope: scopes.join(" "),
       redirect_uri: this.redirectUri,
       state: generateRandomString(16),
     });
@@ -23,7 +33,7 @@ class SpotifyService {
     return authUrl;
   }
 
-  async getAccessToken(code) {
+  async getAccessToken(code: string) {
     const tokenUrl = "https://accounts.spotify.com/api/token";
     const authHeader = Buffer.from(
       `${this.clientId}:${this.clientSecret}`
@@ -43,5 +53,3 @@ class SpotifyService {
     return response.data.access_token;
   }
 }
-
-module.exports = SpotifyService;
