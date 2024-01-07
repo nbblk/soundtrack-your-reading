@@ -7,22 +7,27 @@ export default function Main() {
 
   return (
     <div className="w-full h-screen">
-      <section className="w-full h-1/2 p-8 flex flex-col justify-center items-center border-black">
-        <div className="w-full flex flex-col justify-center items-center md:justify-start md:items-start gap-8">
-          <h1 className="w-full md:w-1/2 text-[72px] md:text-[96px]">
-            Soundtrack your reading.
-          </h1>
-          <Button type="button" size="sm" value={"Start"} onClick={signup} />
-        </div>
-      </section>
-      <section className="w-full h-1/2 p-8 flex flex-col justify-center items-center border border-x-0 border-b-0 border-black">
-        <div className="w-full flex flex-col justify-center itmes-center md:justify-end md:items-end gap-8">
-          <h1 className="w-full md:w-1/2 text-[72px] md:text-[96px] text-right">
-            Soundtrack your writing.
-          </h1>
-          <Button type="button" size="sm" value={"Start"} onClick={() => signup()} />
-        </div>
-      </section>
+      {["Soundtrack your reading", "Soundtrack your writing"].map(
+        (text, index) => (
+          <div
+            key={index}
+            className="w-full h-1/2 p-8 flex flex-col justify-center items-center border first:border-b-1 border-t-0 first:bg-black first:text-white"
+          >
+            <div className={`w-full flex flex-col ${index ? "md:jutify-end" : "md:justify-start"} ${index ? "md:items-end" : "md:items-start"}  gap-8 md:gap-24`}>
+              <h1 className={`w-full ${index ? "text-end" : "text-start"} text-[48px] md:text-[72px] xl:text-[96px]`}>
+                {text}
+              </h1>
+              <Button
+                type="button"
+                size="sm"
+                value="Start"
+                onClick={signup}
+                styles={`p-4 text-xl border ${index ? "border-black hover:text-white" : "border-white hover:bg-white hover:text-black"}`}
+              />
+            </div>
+          </div>
+        )
+      )}
     </div>
   );
 }

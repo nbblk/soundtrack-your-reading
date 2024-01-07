@@ -16,7 +16,7 @@ export default function Button({ type, size, value, styles, onClick, children }:
   return (
     <button
       type={type}
-      className={`w-full ${widthClass} h-auto p-1 border border-black hover:bg-black hover:text-white ${styles}`}
+      className={`w-full ${widthClass} h-auto p-1 border border-black hover:bg-black ${styles}`}
       onClick={onClick}
     >
       {value}

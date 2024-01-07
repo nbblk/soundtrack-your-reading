@@ -28,8 +28,8 @@ export default function Navbar() {
           <Searchbar />
         </li>
         <ul className="md:w-1/5 w-full flex flex-col md:flex-row justify-center md:justify-end items-center md:items-end gap-4">
-          <Button type="button" size="md" value="Login" onClick={login} />
-          <Button type="button" size="md" value="Signup" onClick={signup} />
+          <Button type="button" size="md" value="Login" onClick={login} styles="hover:text-white"/>
+          <Button type="button" size="md" value="Signup" onClick={signup} styles="hover:text-white"/>
         </ul>
       </ul>
     </nav>
