@@ -1,9 +1,7 @@
 "use client";
 import { Button } from "../components/shared";
-import useAuth from "../lib/hooks/useAuth";
 
 export default function Main() {
-  const { signup } = useAuth();
 
   return (
     <div className="w-full h-screen">
@@ -21,7 +19,7 @@ export default function Main() {
                 type="button"
                 size="sm"
                 value="Start"
-                onClick={signup}
+                onClick={ () => {} }
                 styles={`p-4 text-xl border ${index ? "border-black hover:text-white" : "border-white hover:bg-white hover:text-black"}`}
               />
             </div>
